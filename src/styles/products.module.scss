@@ -1,0 +1,27 @@
+.productCard{
+    padding-bottom:48px !important;
+    min-height: 250px;
+    .imageWrapper {
+            min-height: 120px;
+            text-align: center;
+            img {
+                margin: auto 0;
+            }
+        }
+    .title{
+        display: block;
+            overflow: hidden;
+            white-space:wrap;
+            text-overflow: ellipsis;
+            max-height: calc(1.5em * 2);
+            line-height: 1.5em;
+        
+    }
+    .cardFooter{
+        position: absolute;
+        bottom:15px;
+        left:0;
+        right:0;
+        padding: 0 15px;
+    }
+}

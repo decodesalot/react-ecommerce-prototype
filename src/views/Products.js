@@ -38,14 +38,14 @@ const Products = () => {
         const newMaxPrice = Number(event.target.value);
         const newPriceRange = [priceRange[0], newMaxPrice];
         setPriceRange(newPriceRange);
-        //dispatch(setMaxPrice(newMaxPrice));
     };
-    // range
+    const handleChange = () => {
+        console.log('field changed');
+    }
     const fetchProducts = async () => {
         try {
             const response = await api('/products');
             setProducts(response);
-            console.log('products', response);
         } catch (error) {
             console.error('Error fetching products:', error);
         }
@@ -57,6 +57,7 @@ const Products = () => {
         setSelectedProduct(product);
         setShow(true);
     };
+
     const handleSearchChange = ({ target: { value } }) => setSearchQuery(value);
     const productsToDisplay = searchQuery
         ? products.filter((product) =>
@@ -87,6 +88,7 @@ const Products = () => {
                                 key={`${category}-${idx}`}
                                 type="checkbox"
                                 label={category}
+                                onChange={handleChange}
                                 className="text-capitalize"
                             />)}
                         <h3 className="h5 mt-3">Price Range</h3>
@@ -98,7 +100,7 @@ const Products = () => {
                                 max={1000}
                                 step={5}
                             />
-                            <Form.Label>{formatCurrency(priceRange[1] >= 200 ? priceRange[1] - 200 : priceRange[0])} - {formatCurrency(priceRange[1])}</Form.Label>
+                            <Form.Label>{formatCurrency(priceRange[1] >= 500 ? priceRange[1] - 500 : priceRange[0])} - {formatCurrency(priceRange[1])}</Form.Label>
                         </Form>
                         <h3 className="h5 mt-3">Rating</h3>
                         {[5, 4, 3, 2, 1].map((rate, idx) =>
@@ -106,6 +108,7 @@ const Products = () => {
                                 key={`${rate}-${idx}`}
                                 type="checkbox"
                                 label={renderStars(rate)}
+                                onChange={handleChange}
                                 className="text-capitalize"
                             />)}
                     </Col>

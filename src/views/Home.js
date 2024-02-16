@@ -13,7 +13,7 @@ const Home = () => {
                         <Col md={6}>
                             <h1 className='display-4'>Free Shipping on orders over $100</h1>
                             <p className='lead'>Introducing a new model for online grocery shopping and convenient home delivery</p>
-                            <Button variant="primary" className='position-relative z-3' as={Link} to="/products">Shop Deals Now</Button>
+                            <Button variant="primary" className='position-relative z-3' as={Link} to="/products">Shop Now <i className='fa fa-angle-right fa-sm ms-2' /> </Button>
                         </Col>
                     </Row>
                 </Container>

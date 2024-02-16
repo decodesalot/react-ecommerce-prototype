@@ -16,22 +16,21 @@ export const Header = () => {
     const handleClearCart = () => {
         dispatch(clearCart());
     };
+
     const getTotal = (items) => {
-        let total = 0;
-        items.forEach(item => {
-            total += item.price * item.qty; // Assuming each item has a 'price' property
-        });
-        return formatCurrency(total);
-    }
+        return formatCurrency(items.reduce((total, item) => total + item.price * item.qty, 0));
+    };
 
     useEffect(() => {
         if (cart.length > 0) {
             setAnimate(true);
-            setTimeout(() => {
+            const timeoutId = setTimeout(() => {
                 setAnimate(false);
             }, 500); // Adjust this delay to match your CSS animation duration
+            return () => clearTimeout(timeoutId);
         }
     }, [cart]);
+
 
     return (
         <>
@@ -57,7 +56,7 @@ export const Header = () => {
                     <Offcanvas.Title>Shopping Cart </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className='pt-0'>
-                    {!cart.length && <div className='empty-cart text-center p-3'><img src={emptyCartImage} alt="empty cart" className='w-50 mx-auto mb-3' /> <p className='mb-0'>Sorry there are no items in your cart <Button variant='default p-0 btn-link link-underline-light' as={Link} to="/products">View Products</Button></p></div>}
+                    {!cart.length && <div className='empty-cart text-center p-3'><img src={emptyCartImage} alt="empty cart" className='w-50 mx-auto mb-3' /> <p className='mb-0'>Hey! There are no items in your cart <Button variant='default p-0 btn-link link-underline-light' as={Link} to="/products">View Products</Button></p></div>}
                     {cart.length > 0 && <>
                         <p className='fs-6'>{cart.length} Items</p>
                         <div className='cart-preview'>

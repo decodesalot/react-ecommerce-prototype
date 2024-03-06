@@ -1,22 +1,66 @@
-![React eStore Products Screenshot](./src/products.png)
+# Ecommerce Prototype
 
-![React eStore Producuts Cart Screenshot](./src/products-cart.png)
+Welcome to the Ecommerce Prototype Application! This project is a React/Redux-based prototype for an ecommerce platform, utilizing React-Bootstrap for UI components.
 
-# Getting Started with Create React App
+## Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Scripts](#scripts)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This application is a prototype aimed at showcasing the functionality of an ecommerce platform built with React and Redux. It provides basic features such as product listing, shopping cart management, and checkout process simulation.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Product listing with images, descriptions, and prices
+- Shopping cart management (add, remove, update quantities)
+- Checkout process simulation (address, payment, order confirmation)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Product Listing Page | Shopping Cart View |
+|----------------------|--------------------|
+| ![Products Listing](screenshots/products.png) | ![Shopping Cart](screenshots/products-cart.png) |
+
+| Checkout Process | Order Confirmation |
+|------------------|------------------|
+| ![Products Checkout](screenshots/products-checkout.png) | ![Order Confirmation](screenshots/order-confirmation.png) |
+
+## Installation
+
+To run this application locally, follow these steps:
+
+1. Clone repository:
+   ```bash
+   git clone https://github.com/decodesalot/react-ecommerce-prototype.git
+   ```
+2. Navigate into the project directory:
+    ```bash
+    cd react-ecommerce-prototype
+    ```
+3. Install Dependencies:
+    ```bash
+    npm i
+    ```
+3. Start the development server:
+    ```bash
+    npm start
+    ```
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. 
+
+The page will reload when you make changes.
+ 
+
+## Usage
+
+Once the application is running locally, you can explore the features and functionalities provided by the ecommerce prototype. You can browse products, add them to your shopping cart, proceed to checkout, and simulate the order placement process.
+
+## Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). In the project directory, you can run:
 
 ### `npm test`
 
